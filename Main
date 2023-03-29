@@ -1,0 +1,62 @@
+//Adam Witkowski
+package adamwitkowskilab5;
+
+import java.util.Scanner;
+
+public class AdamWitkowskiLab5 {
+
+    public static void main(String[] args) {
+
+        //Keyboard Init:
+        Scanner keyboard = new Scanner(System.in);
+
+        //Test Score Prompts:
+        System.out.println("What is the first test score?");
+        int firstTestScore = keyboard.nextInt();
+        System.out.println("What is the second test score?");
+        int secondTestScore = keyboard.nextInt();
+        System.out.println("What is the third test score?");
+        int thirdTestScore = keyboard.nextInt();
+        System.out.println("What is the fourth test score?");
+        int fourthTestScore = keyboard.nextInt();
+        System.out.println("What is the fifth test score?");
+        int fifthTestScore = keyboard.nextInt();
+
+        //Calculations:
+        System.out.println("Here are the grades and the average.");
+        System.out.println("Test 1: " + determineGrade(firstTestScore));
+        System.out.println("Test 2: " + determineGrade(secondTestScore));
+        System.out.println("Test 3: " + determineGrade(thirdTestScore));
+        System.out.println("Test 4: " + determineGrade(fourthTestScore));
+        System.out.println("Test 5: " + determineGrade(fifthTestScore));
+        System.out.println("Average score: " + calcAverage(firstTestScore, secondTestScore,
+                thirdTestScore, fourthTestScore, fifthTestScore));
+
+        //Making Variable to hold Average:
+        double average = calcAverage(firstTestScore, secondTestScore,
+                thirdTestScore, fourthTestScore, fifthTestScore);
+        System.out.println("Average letter grade: " + determineGrade(average));
+    }
+
+    //Average Calulating Method:
+    public static double calcAverage(int num1, int num2, int num3, int num4, int num5) {
+        int sum = (num1 + num2 + num3 + num4 + num5) / 5;
+        return sum;
+    }
+
+    //Letter Grade Method:
+    public static String determineGrade(double grade) {
+        if (grade >= 90) {
+            return "A";
+        } else if (grade >= 80) {
+            return "B";
+        } else if (grade >= 70) {
+            return "C";
+        } else if (grade >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+
+    }
+}
